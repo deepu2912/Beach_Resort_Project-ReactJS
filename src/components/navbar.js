@@ -40,13 +40,13 @@ export default class navbar extends Component {
           </div>
           <ul className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/rooms">Rooms</Link>
             </li>
             <li>
-              <Link to={localStorage.getItem('Username') === process.env.React_APP_ADMIN_USERNAME ? '' : '/Login'}>{localStorage.getItem('Username') === process.env.React_APP_ADMIN_USERNAME ? 'Deepanshu' : 'Login'}</Link>
+              <Link to={localStorage.getItem('Username') === process.env.React_APP_ADMIN_USERNAME ? '' : '/'}>{localStorage.getItem('Username') === process.env.React_APP_ADMIN_USERNAME ? 'Deepanshu' : 'Login'}</Link>
             </li>
               <li className={localStorage.getItem('Username') === process.env.React_APP_ADMIN_USERNAME ? "show-logout" : "hide-logout"} >
               <Link  to="/" onClick={this.Logout}>Logout</Link>
