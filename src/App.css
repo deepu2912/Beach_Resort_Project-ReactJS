@@ -511,3 +511,82 @@ h6 {
   }
 }
 /* end of rooms fitler*/
+
+
+
+/* Login Form Css Start*/
+
+.App {
+  font-family: sans-serif;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.App h1 {
+  text-align: center;
+  color:white;
+}
+
+.App form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.App label,
+.App input {
+  display: block;
+  width: 100%;
+  
+}
+
+.App label {
+  margin-bottom: 5px;
+  height: 22px;
+  color:white;
+}
+
+.App input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+
+.App input.error {
+  border-color: red;
+}
+
+.input-feedback {
+  color: rgb(235, 54, 54);
+  margin-top: -15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.App button {
+  padding: 10px 15px;
+  background-color: rgb(70, 153, 179);
+  color: white;
+  border: 1px solid rgb(70, 153, 179);
+  background-color: 250ms;
+}
+
+.App button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(70, 153, 179);
+}
+
+
+.show-logout{
+  display: block;
+}
+
+
+
+.hide-logout{
+  display: none;
+}
+
+/* End of Login form Css */
