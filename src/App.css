@@ -520,6 +520,7 @@ h6 {
   font-family: sans-serif;
   padding: 50px;
   background: rgba(0, 0, 0, 0.5);
+  width:100%;
 }
 
 .App h1 {
