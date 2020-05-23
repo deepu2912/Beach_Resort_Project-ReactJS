@@ -71,7 +71,7 @@ function Login() {
        <>
        <Hero> 
        <div className="App">
-        <h1>Validated Login Form</h1>
+        <h1>Login</h1>
         <form onSubmit={authenticateUser}>
           <label htmlFor="Username">User Name / Mobile No</label>
           <input name="Username"  type="text"  placeholder="Enter your User Name / Mobile No" onChange={updateuserlogin} />
