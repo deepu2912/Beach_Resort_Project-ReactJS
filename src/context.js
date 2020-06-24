@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import items from './data';
-import Client from './contentful'
+// import Client from './contentful'
 
-Client.getEntries({
-    content_type:"beachResortRoom"
-})
-.then((response) => console.log(response.items))
-.catch(console.error)
+// Client.getEntries({
+//     content_type:"beachResortRoom"
+// })
+// .then((response) => console.log(response.items))
+// .catch(console.error)
 
 const RoomContext = React.createContext();
 //<RoomContext.Provider value={'hello'}/>
@@ -28,53 +28,68 @@ export default class RoomProvider extends Component {
         pets: false
     };
 
-    getdata = async () =>{
-        try{
-            let response = await Client.getEntries({
-                content_type:"beachResortRoom"
-            })
-            let rooms = this.formatData(response.items)
-            let featuredrooms = rooms.filter(room => room.featured === true)
+    // getdata = async () =>{
+    //     try{
+    //         let response = await Client.getEntries({
+    //             content_type:"beachResortRoom"
+    //         })
+    //         let rooms = this.formatData(response.items)
+    //         let featuredrooms = rooms.filter(room => room.featured === true)
     
-            let maxPrice = Math.max(...rooms.map(item => item.price));
-            let maxSize = Math.max(...rooms.map(item => item.size))
+    //         let maxPrice = Math.max(...rooms.map(item => item.price));
+    //         let maxSize = Math.max(...rooms.map(item => item.size))
          
-             this.setState({
-                rooms:rooms,
-                featuredrooms:featuredrooms,
-                sortedrooms:rooms,
-                loading:false,
-                price:maxPrice,
-                maxPrice:maxPrice,
-                maxSize:maxSize 
-            })
-            console.log(response);
+    //          this.setState({
+    //             rooms:rooms,
+    //             featuredrooms:featuredrooms,
+    //             sortedrooms:rooms,
+    //             loading:false,
+    //             price:maxPrice,
+    //             maxPrice:maxPrice,
+    //             maxSize:maxSize 
+    //         })
+    //         console.log(response);
             
-        }catch(error){
-            console.log(error);
+    //     }catch(error){
+    //         console.log(error);
             
-        }
-        finally{
-            let rooms = this.formatData(items)
-            let featuredrooms = rooms.filter(room => room.featured === true)
+    //     }
+    //     finally{
+    //         let rooms = this.formatData(items)
+    //         let featuredrooms = rooms.filter(room => room.featured === true)
     
-            let maxPrice = Math.max(...rooms.map(item => item.price));
-            let maxSize = Math.max(...rooms.map(item => item.size))
+    //         let maxPrice = Math.max(...rooms.map(item => item.price));
+    //         let maxSize = Math.max(...rooms.map(item => item.size))
          
-             this.setState({
-                rooms:rooms,
-                featuredrooms:featuredrooms,
-                sortedrooms:rooms,
-                loading:false,
-                price:maxPrice,
-                maxPrice:maxPrice,
-                maxSize:maxSize 
-            })
-        }
-    }
+    //          this.setState({
+    //             rooms:rooms,
+    //             featuredrooms:featuredrooms,
+    //             sortedrooms:rooms,
+    //             loading:false,
+    //             price:maxPrice,
+    //             maxPrice:maxPrice,
+    //             maxSize:maxSize 
+    //         })
+    //     }
+    // }
 
     componentDidMount(){
-        this.getdata()
+        // this.getdata()
+        let rooms = this.formatData(items)
+            let featuredrooms = rooms.filter(room => room.featured === true)
+    
+            let maxPrice = Math.max(...rooms.map(item => item.price));
+            let maxSize = Math.max(...rooms.map(item => item.size))
+         
+             this.setState({
+                rooms:rooms,
+                featuredrooms:featuredrooms,
+                sortedrooms:rooms,
+                loading:false,
+                price:maxPrice,
+                maxPrice:maxPrice,
+                maxSize:maxSize 
+            })
       
     }
 
